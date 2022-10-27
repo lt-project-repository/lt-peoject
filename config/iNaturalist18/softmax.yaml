@@ -1,0 +1,48 @@
+coslr: true
+gpu_id: 1
+criterions:
+  PerformanceLoss:
+    def_file: ./loss/SoftmaxLoss.py
+    loss_params: { }
+    optim_params: null
+    weight: 1.0
+endlr: 0.0
+last: false
+memory: { centroids: false, init_centroids: false }
+model_dir: ./logs/iNaturalist18/download
+networks:
+  classifier:
+    def_file: ./models/DotProductClassifier.py
+    optim_params: { lr: 0.2, momentum: 0.9, weight_decay: 0.0001 }
+    params: { dataset: iNaturalist18, feat_dim: 2048, num_classes: 8142, stage1_weights: false,
+              margin_cls: true, margin_mode: pos_grad, freq_path: ./cls_freq/iNaturalist18.json }
+  feat_model:
+    def_file: ./models/ResNet50Feature.py
+    fix: true
+    optim_params: { lr: 0.2, momentum: 0.9, weight_decay: 0.0001 }
+    params: { dataset: iNaturalist18, dropout: null, stage1_weights: false,
+              use_fc: false, use_selfatt: false }
+shuffle: true
+training_opt:
+  backward_weight_logits: none
+  weight_logits: false
+  norm_logits: true
+  pow_for_logits: 1
+  batch_size: 512
+  dataset: iNaturalist18
+  display_step: 10
+  feature_dim: 2048
+  log_dir: ./logs/iNaturalist18/models/margin_cls_norm_logits
+  # log_dir: ./logs/iNaturalist18/models/softmax_margin_cls
+#  log_dir: ./logs/iNaturalist18/models/softmax_norm_logits
+  # log_dir: ./logs/iNaturalist18/models/softmax
+  log_root: ./logs/iNaturalist18
+  num_classes: 8142
+  num_epochs: 30
+  num_workers: 12
+  open_threshold: 0.1
+  sampler: { def_file: ./data/ClassAwareSampler.py, num_samples_cls: 4, type: ClassAwareSampler }
+  scheduler_params: { gamma: 0.1, step_size: 30 }
+  freq_path: ./cls_freq/iNaturalist18.json
+  stage: softmax_cm_ln
+  sub_dir: models

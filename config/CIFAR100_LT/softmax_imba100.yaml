@@ -1,0 +1,51 @@
+coslr: false
+coslrwarmup: true
+gpu_id: 1
+criterions:
+  PerformanceLoss:
+    def_file: ./loss/SoftmaxLoss.py
+    loss_params: {}
+    optim_params: null
+    weight: 1.0
+endlr: 0.0
+warmup_iterations: 800
+base_lr: 0.05
+warmup_lr: 0.1
+last: false
+memory: {centroids: false, init_centroids: false}
+model_dir: null
+networks:
+  classifier:
+    def_file: ./models/DotProductClassifier.py
+    optim_params: {lr: 0.05, momentum: 0.9, weight_decay: 0.0005}
+    params: {feat_dim: 64, num_classes: 100, margin_cls: true, margin_mode: pos_grad, freq_path: ./cls_freq/CIFAR-100-LT_IMBA100.json}
+  feat_model:
+    def_file: ./models/ResNet32Feature.py
+    fix: false
+    optim_params: {lr: 0.05, momentum: 0.9, weight_decay: 0.0005}
+    params: {}
+shuffle: false
+training_opt:
+  backward_weight_logits: neg_pos_bal_norm
+  freq_path: ./cls_freq/CIFAR-100-LT_IMBA100.json
+  weight_logits: false
+  norm_logits: true
+  pow_for_logits: 1
+  backbone: resnet32
+  batch_size: 512
+  dataset: CIFAR100_LT
+  display_step: 10
+  feature_dim: 64
+  # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_margin_cls_pos_grad_norm_logits
+  # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_margin_cls_pos_grad_2
+  # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_norm_logits
+  # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_2
+  log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_baseline
+  num_classes: 100
+  num_iterations: 13000
+  num_workers: 4
+  open_threshold: 0.1
+  sampler: null
+  scheduler_params: {gamma: 0.1, step_size: 3}
+  sub_dir: models
+  cifar_imb_ratio: 100

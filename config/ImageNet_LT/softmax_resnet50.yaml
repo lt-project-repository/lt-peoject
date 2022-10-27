@@ -1,0 +1,45 @@
+coslr: true
+gpu_id: 1
+criterions:
+  PerformanceLoss:
+    def_file: ./loss/LabelAwareSmoothing.py
+    loss_params: { freq_path: ./cls_freq/ImageNet_LT.json }
+    optim_params: null
+    weight: 1.0
+endlr: 0.0
+last: false
+memory: { centroids: false, init_centroids: false }
+model_dir: ./download
+networks:
+  classifier:
+    def_file: ./models/DotProductClassifier.py
+    optim_params: { lr: 0.2, momentum: 0.9, weight_decay: 0.0005 }
+    params: { dataset: ImageNet_LT, feat_dim: 2048, num_classes: 1000, stage1_weights: false,
+              margin_cls: true, margin_mode: pos_grad, freq_path: ./cls_freq/ImageNet_LT.json }
+  feat_model:
+    def_file: ./models/ResNet50Feature.py
+    fix: true
+    optim_params: { lr: 0.2, momentum: 0.9, weight_decay: 0.0005 }
+    params: { dataset: ImageNet_LT, dropout: null, stage1_weights: false, use_fc: false, use_selfatt: false }
+shuffle: false
+training_opt:
+  backward_weight_logits: none
+  freq_path: ./cls_freq/ImageNet_LT.json
+  weight_logits: false
+  norm_logits: true
+  pow_for_logits: 1.0
+  backbone: resnet50
+  batch_size: 128
+  dataset: ImageNet_LT
+  display_step: 10
+  feature_dim: 2048
+  log_dir: ./logs/ImageNet_LT/models/softmax_resnet50_margin_cls_norm_logits_mislas
+  log_root: ./logs/ImageNet_LT
+  num_classes: 1000
+  num_epochs: 10
+  num_workers: 12
+  open_threshold: 0.1
+  sampler: null
+  scheduler_params: { gamma: 0.1, step_size: 30 }
+  stage: base_softmax_resnet50
+  sub_dir: models
