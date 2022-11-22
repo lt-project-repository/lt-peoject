@@ -8,7 +8,7 @@ criterions:
     optim_params: null
     weight: 1.0
 endlr: 0.0
-warmup_iterations: 800
+warmup_iterations: 200
 base_lr: 0.05
 warmup_lr: 0.1
 last: false
@@ -29,19 +29,19 @@ training_opt:
   backward_weight_logits: none
   freq_path: ./cls_freq/CIFAR-100-LT_IMBA200.json
   weight_logits: false
-  norm_logits: false
+  norm_logits: true
   pow_for_logits: 1
   backbone: resnet32
-  batch_size: 512
+  batch_size: 64
   dataset: CIFAR100_LT
   display_step: 10
   feature_dim: 64
-#   log_dir: ./output/logs/CIFAR100_LT/models/resnet32_softmax_imba200_margin_cls_pos_grad_norm_sample_pos_logits
-  log_dir: /logs/CIFAR100_LT/models/resnet32_softmax_imba200_margin_cls
+  log_dir: ./output/logs/CIFAR100_LT/models/resnet32_softmax_imba200_margin_cls
+  # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba200_cm
   # log_dir: ./output/logs/CIFAR100_LT/models/resnet32_softmax_imba200_norm_logits
   # log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba200_5
   num_classes: 100
-  num_iterations: 13000
+  num_epochs: 200
   num_workers: 4
   open_threshold: 0.1
   sampler: null
