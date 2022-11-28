@@ -37,3 +37,6 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 - [ ] Support iNaturalist2018
 - [ ] Support Places365-LT
 - [ ] More results and models
+- 
+## Acknowledgment
+We refer to some codes from [BalancedMetaSoftmax](https://github.com/jiawei-ren/BalancedMetaSoftmax-Classification). Many thanks to the authors.
