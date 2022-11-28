@@ -40,7 +40,7 @@ networks:
 shuffle: false
 training_opt:
   backbone: resnet32
-  backward_weight_logits: neg_pos_bal_norm
+  backward_weight_logits: none
   batch_size: 64
   cifar_imb_ratio: 100
   dataset: CIFAR100_LT
