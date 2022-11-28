@@ -5,15 +5,24 @@ This is the source code for our paper: Long-tailed Classification via Balanced G
 ## Get Started
 
 ### CIFAR100
-
-On CAIFAR-100
-
+Cross Entropy(ce)
 ```bash
-python main.py --cfg config/CIFAR100_LT/softmax_imba200.yaml
+python main.py --cfg config/CIFAR100_LT/ce_imba100.yaml
+```
+Cross Entropy + PN
+```bash
+python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
+```
+BaGMar loss(cm)
+```bash
+python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
+```
+BaGMar loss + PN
+```bash
+python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ```
 
-## Results and Models
-### CIFAR100
+## Results and Models for CIFAR100
 
 | Imbalance Factor   | Top-1 Accuracy(τ=1)       | Top-1 Accuracy(fine-tune τ) | Log           | Model |
 | ----------- | ---------- | -------------- | ------------- | ----- |
@@ -22,7 +31,9 @@ python main.py --cfg config/CIFAR100_LT/softmax_imba200.yaml
 | 50  | 55.1%  |  55.2%(τ=0.9)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)  |
 | 10  | 62.5% | 62.6%(τ=1.1)        | [link](https://drive.google.com/file/d/11FNa46iEfOI7d62W7xjWQwbcUqzFaRVv/view?usp=sharing)        | [link](https://drive.google.com/file/d/1RIfiPjvx4V_QeiBDrJTW0ZAO8KjN3Z3m/view?usp=sharing)  |
 
-More models will come soon.
-
-## Acknowledgment
-We refer to some codes from [Balanced Meta Softmax](https://github.com/jiawei-ren/BalancedMetaSoftmax-Classification). Many thanks to the authors.
+##to do list
+- [x] Support Cifar100-LT dataset
+- [ ] Support imageNet-LT
+- [ ] Support iNaturalist2018
+- [ ] Support Places365-LT
+- [ ] More results and models
