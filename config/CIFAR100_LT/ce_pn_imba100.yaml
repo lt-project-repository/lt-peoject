@@ -40,14 +40,14 @@ networks:
 shuffle: false
 training_opt:
   backbone: resnet32
-  backward_weight_logits: neg_pos_bal_norm
+  backward_weight_logits: none
   batch_size: 64
   cifar_imb_ratio: 100
   dataset: CIFAR100_LT
   display_step: 10
   feature_dim: 64
   freq_path: ./cls_freq/CIFAR-100-LT_IMBA100.json
-  log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_cm
+  log_dir: ./logs/CIFAR100_LT/models/resnet32_softmax_imba100_ce_pn
   norm_logits: true
   num_classes: 100
   num_epochs: 200
