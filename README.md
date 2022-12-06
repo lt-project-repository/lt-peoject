@@ -13,16 +13,18 @@ Cross Entropy + PN
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
-BaGMar loss
+BaGMar loss(cm)
 ```bash
-python main.py --cfg config/CIFAR100_LT/BaGMar_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
 ```
 BaGMar loss + PN
 ```bash
-python main.py --cfg config/CIFAR100_LT/BaGMar_pn_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ```
 
-## Results and Models for CIFAR100
+
+## Results and Models
+### CIFAR100
 
 | Imbalance Factor   | Top-1 Accuracy(τ=1)       | Top-1 Accuracy(fine-tune τ) | Log           | Model |
 | ----------- | ---------- | -------------- | ------------- | ----- |
@@ -31,12 +33,19 @@ python main.py --cfg config/CIFAR100_LT/BaGMar_pn_imba100.yaml
 | 50  | 55.1%  |  55.2%(τ=0.9)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)  |
 | 10  | 62.5% | 62.6%(τ=1.1)        | [link](https://drive.google.com/file/d/11FNa46iEfOI7d62W7xjWQwbcUqzFaRVv/view?usp=sharing)        | [link](https://drive.google.com/file/d/1RIfiPjvx4V_QeiBDrJTW0ZAO8KjN3Z3m/view?usp=sharing)  |
 
-## To do list
+### Large-scale Datasets
+|  Dataset  | BaGMar loss | BaGMar loss + PN(τ) | Log | Model |
+| ----------- | ---------- | -------------- | ------------- | ----- |
+| ImageNet-LT | 53.4%   | 54.9%(τ=1.7)        | [train.log](https://drive.google.com/file/d/1LK66jDyKofhg1nYw4efjJbLjTc1UJ-sj/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/1uW_qsgPsU8XQpRE1p7pNXMbjQJ_eSGRC/view?usp=sharing)       | [link](https://drive.google.com/file/d/11aZuiXN0ULDn_wImEctHVcwEOSZaK10e/view?usp=sharing)  |
+| iNa'2018 | 71.2%   |73.3%(τ=1.5) | [train.log](https://drive.google.com/file/d/1oqY0xa-Bxc8avT0k_TnsZEMZ5ogBBlXm/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/16-7fq73yjLOwOqKS_-c4Xci13OcLAFMK/view?usp=sharing)       | [link](https://drive.google.com/file/d/137xd182BR4qh0M5ib24UssUNUS-Tat7t/view?usp=sharing)  |
+| Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
+
+
+##to do list
 - [x] Support Cifar100-LT dataset
 - [ ] Support imageNet-LT
 - [ ] Support iNaturalist2018
 - [ ] Support Places365-LT
-- [ ] More results and models
-- 
+- [x] More results and models
 ## Acknowledgment
 We refer to some codes from [BalancedMetaSoftmax](https://github.com/jiawei-ren/BalancedMetaSoftmax-Classification). Many thanks to the authors.
