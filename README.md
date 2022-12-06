@@ -41,7 +41,7 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 | Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
 
 
-##to do list
+## to do list
 - [x] Support Cifar100-LT dataset
 - [ ] Support imageNet-LT
 - [ ] Support iNaturalist2018
