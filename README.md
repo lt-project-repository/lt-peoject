@@ -11,6 +11,7 @@ This is the source code for our paper: Long-tailed Classification via Balanced G
 
 More details can be seen in requirements.txt
 
+**Install BaGMar**
 ```bash
 git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
