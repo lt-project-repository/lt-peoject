@@ -2,11 +2,33 @@
 This is the source code for our paper: Long-tailed Classification via Balanced Gradient Margin Loss based on Pytorch.
 
 ## Installation
+**Requirements**
+* Python 3.8.10
+* torchvision 0.12.0
+* Pytorch 1.11.0
+* yacs 0.1.8
+* h5py
+* matplotlib
+* numpy
+* pandas
+* pyyaml
+* scikit-learn
+* scipy
+* tqdm
+* yacs
+
 ```bash
 git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
 pip install -r requirements.txt
 ```
+**Dataset Preparation**
+* [CIFAR-10 & CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
+* [ImageNet](http://image-net.org/index)
+* [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
+* [Places](http://places2.csail.mit.edu/download.html)
+
+Change the `data_path` in `main.py` accordingly.
 
 ## Get Started
 
