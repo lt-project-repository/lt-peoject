@@ -1,6 +1,12 @@
 # Long-tailed Classification via Balanced Gradient Margin Loss
-
 This is the source code for our paper: Long-tailed Classification via Balanced Gradient Margin Loss based on Pytorch.
+
+## Installation
+```bash
+git clone https://github.com/lt-project-repository/lt-project.git
+cd lt-project
+pip install -r requirements.txt
+```
 
 ## Get Started
 
@@ -40,12 +46,12 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 | iNa'2018 | 71.2%   |73.3%(τ=1.5) | [train.log](https://drive.google.com/file/d/1oqY0xa-Bxc8avT0k_TnsZEMZ5ogBBlXm/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/16-7fq73yjLOwOqKS_-c4Xci13OcLAFMK/view?usp=sharing)       | [link](https://drive.google.com/file/d/137xd182BR4qh0M5ib24UssUNUS-Tat7t/view?usp=sharing)  |
 | Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
 
-
 ## to do list
 - [x] Support Cifar100-LT dataset
 - [ ] Support imageNet-LT
 - [ ] Support iNaturalist2018
 - [ ] Support Places365-LT
 - [x] More results and models
+
 ## Acknowledgment
 We refer to some codes from [BalancedMetaSoftmax](https://github.com/jiawei-ren/BalancedMetaSoftmax-Classification). Many thanks to the authors.
