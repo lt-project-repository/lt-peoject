@@ -17,6 +17,8 @@ git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
 pip install -r requirements.txt
 ```
+Note that the torch version should be compatible with your cuda version
+
 **Dataset Preparation**
 * [CIFAR-10 & CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
 * [ImageNet](http://image-net.org/index)
