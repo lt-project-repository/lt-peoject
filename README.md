@@ -23,7 +23,7 @@ pip install -r requirements.txt
 * [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
 * [Places](http://places2.csail.mit.edu/download.html)
 
-Change the `data_path` in `main.py` accordingly.
+Change the dataset path in `main.py` accordingly.
 
 ## Get Started
 
