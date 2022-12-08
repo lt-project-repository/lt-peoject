@@ -7,15 +7,8 @@ This is the source code for our paper: Long-tailed Classification via Balanced G
 * torchvision 0.12.0
 * Pytorch 1.11.0
 * yacs 0.1.8
-* h5py
-* matplotlib
-* numpy
-* pandas
-* pyyaml
-* scikit-learn
-* scipy
-* tqdm
-* yacs
+* ...
+More details can be seen in requirements.txt
 
 ```bash
 git clone https://github.com/lt-project-repository/lt-project.git
