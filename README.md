@@ -25,7 +25,7 @@ Note that the torch version should be compatible with your cuda version, and
 * [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
 * [Places](http://places2.csail.mit.edu/download.html)
 
-Change the dataset path in `main.py` accordingly. In the configuration file (ending with '.yaml'), norm_logits is equivalent to prediction normalization(PN), and margin_cls means Balanced Gradient Margin Loss(BaGMar loss).
+Change the dataset path in `main.py` accordingly. In the configuration file (ending with '.yaml'), `norm_logits` is equivalent to prediction normalization(PN), and `margin_cls` means Balanced Gradient Margin Loss(BaGMar loss).
 
 ## Get Started
 
@@ -38,7 +38,7 @@ Cross Entropy + PN
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
-BaGMar loss(cm)
+BaGMar loss
 ```bash
 python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
 ```
