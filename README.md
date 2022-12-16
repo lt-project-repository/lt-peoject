@@ -52,7 +52,7 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ### CIFAR100
 
 | Imbalance Factor   | Top-1 Accuracy(τ=1)       | Top-1 Accuracy(fine-tune τ) | Log           | Model |
-| ----------- | ---------- | -------------- | ------------- | ----- |
+| :------: | :------: | :------: | :------: | :------: |
 | 200 | 47.4%   | 47.5%(τ=1.5)        | [link](https://drive.google.com/file/d/1qi7HEkCk1SEpgjWX2qfDJkR6x8vmGblJ/view?usp=sharing)        | [link](https://drive.google.com/file/d/1jEpJR8H8EF2idOiXkc4nh5XU6lKZjiXX/view?usp=sharing)  |
 | 100 | 50.9%   |51.0%(τ=1.5)        | [link](https://drive.google.com/file/d/1LMZxARsjDVs5Leq0uCKOAJCFgjlao-8H/view?usp=sharing)       | [link](https://drive.google.com/file/d/1Wmt1PP5WMroqb9ASiljpOX8BNRS-K9Au/view?usp=sharing) |
 | 50  | 55.1%  |  55.2%(τ=0.9)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)  |
@@ -60,10 +60,10 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 
 ### Large-scale Datasets
 |  Dataset  | BaGMar loss | BaGMar loss + PN(τ) | Log | Model |
-| ----------- | ---------- | -------------- | ------------- | ----- |
-| ImageNet-LT | 53.4%   | 54.9%(τ=1.7)        | [train.log](https://drive.google.com/file/d/1LK66jDyKofhg1nYw4efjJbLjTc1UJ-sj/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/1uW_qsgPsU8XQpRE1p7pNXMbjQJ_eSGRC/view?usp=sharing)       | [link](https://drive.google.com/file/d/11aZuiXN0ULDn_wImEctHVcwEOSZaK10e/view?usp=sharing)  |
-| iNa'2018 | 71.2%   |73.3%(τ=1.5) | [train.log](https://drive.google.com/file/d/1oqY0xa-Bxc8avT0k_TnsZEMZ5ogBBlXm/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/16-7fq73yjLOwOqKS_-c4Xci13OcLAFMK/view?usp=sharing)       | [link](https://drive.google.com/file/d/137xd182BR4qh0M5ib24UssUNUS-Tat7t/view?usp=sharing)  |
-| Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing) [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
+| :------: | :------: | :------: | :------: | :------: |
+| ImageNet-LT | 53.4%   | 54.9%(τ=1.7)        | [train.log](https://drive.google.com/file/d/1LK66jDyKofhg1nYw4efjJbLjTc1UJ-sj/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/1uW_qsgPsU8XQpRE1p7pNXMbjQJ_eSGRC/view?usp=sharing)       | [link](https://drive.google.com/file/d/11aZuiXN0ULDn_wImEctHVcwEOSZaK10e/view?usp=sharing)  |
+| iNa'2018 | 71.2%   |73.3%(τ=1.5) | [train.log](https://drive.google.com/file/d/1oqY0xa-Bxc8avT0k_TnsZEMZ5ogBBlXm/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/16-7fq73yjLOwOqKS_-c4Xci13OcLAFMK/view?usp=sharing)       | [link](https://drive.google.com/file/d/137xd182BR4qh0M5ib24UssUNUS-Tat7t/view?usp=sharing)  |
+| Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
 
 ## to do list
 - [x] Support Cifar100-LT dataset
