@@ -17,7 +17,7 @@ git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
 pip install -r requirements.txt
 ```
-Note that the torch version should be compatible with your cuda version, and 
+Note that the torch version should be compatible with your cuda version.  In the configuration file (ending with '.yaml'), `norm_logits` is equivalent to prediction normalization(PN), and `margin_cls` means Balanced Gradient Margin Loss(BaGMar loss).
 
 **Dataset Preparation**
 * [CIFAR-10 & CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
@@ -25,7 +25,7 @@ Note that the torch version should be compatible with your cuda version, and
 * [iNaturalist 2018](https://github.com/visipedia/inat_comp/tree/master/2018)
 * [Places](http://places2.csail.mit.edu/download.html)
 
-Change the dataset path in `main.py` accordingly. In the configuration file (ending with '.yaml'), `norm_logits` is equivalent to prediction normalization(PN), and `margin_cls` means Balanced Gradient Margin Loss(BaGMar loss).
+Change the dataset path in `main.py` accordingly.
 
 ## Get Started
 
