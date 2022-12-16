@@ -38,7 +38,7 @@ Cross Entropy + PN
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
-BaGMar loss
+BaGMar loss(cm)
 ```bash
 python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
 ```
