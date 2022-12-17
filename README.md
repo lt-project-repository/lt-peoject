@@ -30,6 +30,7 @@ Change the dataset path in `main.py` accordingly.
 ## Get Started
 
 ### CIFAR100
+$$ x+y $$
 Cross Entropy(ce)
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_imba100.yaml
