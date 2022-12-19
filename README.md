@@ -51,7 +51,7 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ## Results and Models
 ### CIFAR100
 
-On the cifar100 data set, the results shown in the table below will be higher than the results in the paper, because we adjusted the two parameters named λ1 and λ2 shown in the following formula.
+On the cifar100 data set, the results shown in the table below will be higher than the results in the paper, because we adjusted two parameters named λ1 and λ2 shown in the following formula.
 
 ![loading...](./formula.svg)
 
