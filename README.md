@@ -38,7 +38,7 @@ Cross Entropy + PN
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
-BaGMar loss(cm)
+BaGMar loss
 ```bash
 python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
 ```
@@ -51,12 +51,15 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ## Results and Models
 ### CIFAR100
 
-| Imbalance Factor   | Top-1 Accuracy(τ=1)       | Top-1 Accuracy(fine-tune τ) | Log           | Model |
+On the cifar100 data set, the results shown in the table below will be higher than the results in the paper, because we adjusted the two parameters named λ1 and λ2 shown in the following formula.
+![loading...](./formula.svg)
+
+|  Imbalance Factor  |  BaGMar loss  |  BaGMar loss + PN  |  Log  |  Model  |
 | :------: | :------: | :------: | :------: | :------: |
-| 200 | 47.4%   | 47.5%(τ=1.5)        | [link](https://drive.google.com/file/d/1qi7HEkCk1SEpgjWX2qfDJkR6x8vmGblJ/view?usp=sharing)        | [link](https://drive.google.com/file/d/1jEpJR8H8EF2idOiXkc4nh5XU6lKZjiXX/view?usp=sharing)  |
-| 100 | 50.9%   |51.0%(τ=1.5)        | [link](https://drive.google.com/file/d/1LMZxARsjDVs5Leq0uCKOAJCFgjlao-8H/view?usp=sharing)       | [link](https://drive.google.com/file/d/1Wmt1PP5WMroqb9ASiljpOX8BNRS-K9Au/view?usp=sharing) |
-| 50  | 55.1%  |  55.2%(τ=0.9)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)        | [link](https://drive.google.com/file/d/1dGV5MEue6tp85RU2zUSt08WLqe06x9R-/view?usp=sharing)  |
-| 10  | 62.5% | 62.6%(τ=1.1)        | [link](https://drive.google.com/file/d/11FNa46iEfOI7d62W7xjWQwbcUqzFaRVv/view?usp=sharing)        | [link](https://drive.google.com/file/d/1RIfiPjvx4V_QeiBDrJTW0ZAO8KjN3Z3m/view?usp=sharing)  |
+|  200  |  48.0%  |  48.5%  |  [link](https://drive.google.com/file/d/1kg3eH71Zs5MhbmtlqKtv9YNgruBBjjOj/view?usp=sharing)  | [link](https://drive.google.com/file/d/1lDfddC2idKjjblrivlZKRY2RNuUUvjAR/view?usp=sharing)  |
+|  100  |  52.1%  |  52.3%  |  [link](https://drive.google.com/file/d/1NyfxLGIddnfwORWJi5D-PLP-6vqShPAb/view?usp=sharing)  |  [link](https://drive.google.com/file/d/1QRhQPS9U-m-CvlUfsEOaarkR5RS_vP3R/view?usp=sharing)  |
+|  50   |  56.0%  |  56.5%  |  [link](https://drive.google.com/file/d/1z-wBhclun8nbiJU-pVn043OC5OSZ51yS/view?usp=sharing)  |  [link](https://drive.google.com/file/d/16R6QC7kQvjjX8ej86XJ-qlO_pVHcJG94/view?usp=sharing)  |
+|  10   |  63.8%  |  64.2%  |  [link](https://drive.google.com/file/d/1TRNyaW73NSUugUCbMQHnWX0ny6sX3hix/view?usp=sharing)  |  [link](https://drive.google.com/file/d/1ilLqFJzGX4k-QeD1V2TAW6saS5cGyqqW/view?usp=sharing)  |
 
 ### Large-scale Datasets
 |  Dataset  | BaGMar loss | BaGMar loss + PN(τ) | Log | Model |
@@ -66,8 +69,8 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 | Places-LT	  | 41.0%  |  41.4%(τ=1.4)| [train.log](https://drive.google.com/file/d/19apnKe8La2a0QECvpT7veCg92ydCoR3P/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/17tGlqvFLgBa_qs4UCeZxwgbU9VQApWEZ/view?usp=sharing)       | [link](https://drive.google.com/file/d/1tcesX6pECynXDbDPaL-G0Z0qPxosL_D0/view?usp=sharing)  |
 
 ## to do list
-- [x] Support Cifar100-LT dataset
-- [ ] Support imageNet-LT
+- [x] Support CIFAR100-LT dataset
+- [ ] Support ImageNet-LT
 - [ ] Support iNaturalist2018
 - [ ] Support Places365-LT
 - [x] More results and models
