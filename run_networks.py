@@ -329,9 +329,9 @@ class model():
             # Calculate logits with classifier
             self.logits, self.direct_memory_feature = self.networks['classifier'](self.features,
                                                                                   self.accum_cls_pos_grad + 1e-3,
+                                                                                  self.accum_sample_neg_grad,
+                                                                                  labels,
                                                                                   centroids_)
-            accum_sample_neg_grad_by_labels = self.accum_sample_neg_grad[labels]
-            self.logits = self.logits - torch.log(accum_sample_neg_grad_by_labels.unsqueeze(1) + 1e-3)
 
             # pdb.set_trace()
 
