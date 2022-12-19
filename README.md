@@ -52,6 +52,7 @@ python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
 ### CIFAR100
 
 On the cifar100 data set, the results shown in the table below will be higher than the results in the paper, because we adjusted the two parameters named λ1 and λ2 shown in the following formula.
+
 ![loading...](./formula.svg)
 
 |  Imbalance Factor  |  BaGMar loss  |  BaGMar loss + PN  |  Log  |  Model  |
