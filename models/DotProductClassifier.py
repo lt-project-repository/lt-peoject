@@ -20,7 +20,7 @@ import json
 
 class DotProduct_Classifier(nn.Module):
 
-    def __init__(self, num_classes=1000, feat_dim=2048, freq_path=None, margin_cls=False, margin_mode='freq', *args):
+    def __init__(self, num_classes=1000, feat_dim=2048, freq_path=None, margin_cls=False, margin_mode='freq', lamda_1=1.0, lamda_2=1.0, *args):
         super(DotProduct_Classifier, self).__init__()
         self.freq_path = freq_path
         self.margin_cls = margin_cls
@@ -35,8 +35,10 @@ class DotProduct_Classifier(nn.Module):
             self.sample_per_class = self.sample_per_class / torch.sum(self.sample_per_class)
         # print('<DotProductClassifier> contains bias: {}'.format(bias))
         self.fc = nn.Linear(feat_dim, num_classes)
+        self.lamda_1 = lamda_1
+        self.lamda_2 = lamda_2
 
-    def forward(self, x, pos_grad, *args):
+    def forward(self, x, pos_grad, accum_sample_neg_grad, labels, *args):
         # if self.margin_mode == 'freq':
         #     margin = self.sample_per_class
         if self.margin_mode == 'pos_grad':
@@ -49,16 +51,19 @@ class DotProduct_Classifier(nn.Module):
             # print(pos_grad.shape)
             # print(margin.shape)
             # print(self.fc(x).shape)
-            x = self.fc(x) + torch.log(margin)
+            x = self.fc(x) + self.lamda_1 * torch.log(margin)
+            
+            accum_sample_neg_grad_by_labels = accum_sample_neg_grad[labels]
+            x = x - self.lamda_2 * torch.log(accum_sample_neg_grad_by_labels.unsqueeze(1) + 1e-3)
         else:
             x = self.fc(x)
         return x, None
 
 
 def create_model(feat_dim, num_classes=1000, stage1_weights=False, dataset=None, log_dir=None, test=False,
-                 freq_path=None, margin_cls=False, margin_mode='freq', *args):
+                 freq_path=None, margin_cls=False, margin_mode='freq', lamda_1=1.0, lamda_2=1.0, *args):
     print('Loading Dot Product Classifier.')
-    clf = DotProduct_Classifier(num_classes, feat_dim, freq_path, margin_cls, margin_mode)
+    clf = DotProduct_Classifier(num_classes, feat_dim, freq_path, margin_cls, margin_mode, lamda_1, lamda_2)
 
     if not test:
         if stage1_weights:
