@@ -28,6 +28,8 @@ networks:
       margin_mode: pos_grad
       num_classes: 100
       test: false
+      lamda_1: 1.2
+      lamda_2: 0.9
   feat_model:
     def_file: ./models/ResNet32Feature.py
     fix: false
