@@ -40,11 +40,11 @@ python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
 BaGMar loss
 ```bash
-python main.py --cfg config/CIFAR100_LT/cm_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/BaGMar_imba100.yaml
 ```
 BaGMar loss + PN
 ```bash
-python main.py --cfg config/CIFAR100_LT/cm_pn_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/BaGMar_pn_imba100.yaml
 ```
 
 
