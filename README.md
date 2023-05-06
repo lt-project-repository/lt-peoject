@@ -1,4 +1,4 @@
-# Long-tailed Classification via Balanced Gradient Margin Loss
+# Gradient-Aware Logit Adjustment Loss for Long-tailed Classifier
 This is the source code for our paper: Gradient-Aware Logit Adjustment Loss for Long-tailed Classifier based on Pytorch.
 
 ## Installation
@@ -11,7 +11,7 @@ This is the source code for our paper: Gradient-Aware Logit Adjustment Loss for 
 
 More details can be seen in requirements.txt
 
-**Install BaGMar**
+**Install GALA**
 ```bash
 git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
