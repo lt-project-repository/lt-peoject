@@ -1,5 +1,5 @@
 # Long-tailed Classification via Balanced Gradient Margin Loss
-This is the source code for our paper: Long-tailed Classification via Balanced Gradient Margin Loss based on Pytorch.
+This is the source code for our paper: Gradient-Aware Logit Adjustment Loss for Long-tailed Classifier based on Pytorch.
 
 ## Installation
 **Requirements**
@@ -17,7 +17,7 @@ git clone https://github.com/lt-project-repository/lt-project.git
 cd lt-project
 pip install -r requirements.txt
 ```
-Note that the torch version should be compatible with your cuda version.  In the configuration file (ending with '.yaml'), `norm_logits` is equivalent to prediction normalization(PN), and `margin_cls` means Balanced Gradient Margin Loss(BaGMar loss).
+Note that the torch version should be compatible with your cuda version.  In the configuration file (ending with '.yaml'), `norm_logits` is equivalent to Prediction Re-balancing Strategy, and `margin_cls` means GALA Loss.
 
 **Dataset Preparation**
 * [CIFAR-10 & CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html)
@@ -34,28 +34,23 @@ Cross Entropy(ce)
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_imba100.yaml
 ```
-Cross Entropy + PN
+Cross Entropy + Prediction Re-balancing Strategy
 ```bash
 python main.py --cfg config/CIFAR100_LT/ce_pn_imba100.yaml
 ```
-BaGMar loss
+GALA loss
 ```bash
-python main.py --cfg config/CIFAR100_LT/BaGMar_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/gala_imba100.yaml
 ```
-BaGMar loss + PN
+GALA loss + Prediction Re-balancing Strategy
 ```bash
-python main.py --cfg config/CIFAR100_LT/BaGMar_pn_imba100.yaml
+python main.py --cfg config/CIFAR100_LT/gala_pn_imba100.yaml
 ```
 
 
 ## Results and Models
 ### CIFAR100
-
-On the cifar100 data set, the results shown in the table below will be higher than the results in the paper, because we adjusted two parameters named λ1 and λ2 shown in the following formula.
-
-![loading...](./formula.svg)
-
-|  Imbalance Factor  |  BaGMar loss  |  BaGMar loss + PN  |  Log  |  Model  |
+|  Imbalance Factor  |  GALA loss  |  GALA loss + Prediction Re-balancing Strategy  |  Log  |  Model  |
 | :------: | :------: | :------: | :------: | :------: |
 |  200  |  48.0%  |  48.5%  |  [link](https://drive.google.com/file/d/1kg3eH71Zs5MhbmtlqKtv9YNgruBBjjOj/view?usp=sharing)  | [link](https://drive.google.com/file/d/1lDfddC2idKjjblrivlZKRY2RNuUUvjAR/view?usp=sharing)  |
 |  100  |  52.1%  |  52.3%  |  [link](https://drive.google.com/file/d/1NyfxLGIddnfwORWJi5D-PLP-6vqShPAb/view?usp=sharing)  |  [link](https://drive.google.com/file/d/1QRhQPS9U-m-CvlUfsEOaarkR5RS_vP3R/view?usp=sharing)  |
@@ -63,7 +58,7 @@ On the cifar100 data set, the results shown in the table below will be higher th
 |  10   |  63.8%  |  64.2%  |  [link](https://drive.google.com/file/d/1TRNyaW73NSUugUCbMQHnWX0ny6sX3hix/view?usp=sharing)  |  [link](https://drive.google.com/file/d/1ilLqFJzGX4k-QeD1V2TAW6saS5cGyqqW/view?usp=sharing)  |
 
 ### Large-scale Datasets
-|  Dataset  | BaGMar loss | BaGMar loss + PN(τ) | Log | Model |
+|  Dataset  | GALA loss | GALA loss + Prediction Re-balancing Strategy(τ) | Log | Model |
 | :------: | :------: | :------: | :------: | :------: |
 | ImageNet-LT | 53.4%   | 54.9%(τ=1.7)        | [train.log](https://drive.google.com/file/d/1LK66jDyKofhg1nYw4efjJbLjTc1UJ-sj/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/1uW_qsgPsU8XQpRE1p7pNXMbjQJ_eSGRC/view?usp=sharing)       | [link](https://drive.google.com/file/d/11aZuiXN0ULDn_wImEctHVcwEOSZaK10e/view?usp=sharing)  |
 | iNa'2018 | 71.2%   |73.3%(τ=1.5) | [train.log](https://drive.google.com/file/d/1oqY0xa-Bxc8avT0k_TnsZEMZ5ogBBlXm/view?usp=sharing)   [fine-tune-τ.log](https://drive.google.com/file/d/16-7fq73yjLOwOqKS_-c4Xci13OcLAFMK/view?usp=sharing)       | [link](https://drive.google.com/file/d/137xd182BR4qh0M5ib24UssUNUS-Tat7t/view?usp=sharing)  |
